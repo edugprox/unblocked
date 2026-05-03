@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gproxy - Unblocked Proxy & Games</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🛡️ Gproxy</h1>
+            <p>Your Gateway to Unrestricted Access</p>
+        </header>
+
+        <nav class="tabs">
+            <button class="tab-btn active" data-tab="proxy-tab">🛡️ Proxy</button>
+            <button class="tab-btn" data-tab="games-tab">🎮 Games</button>
+            <button class="tab-btn" data-tab="about-tab">ℹ️ About</button>
+        </nav>
+
+        <!-- Proxy Tab -->
+        <div id="proxy-tab" class="tab-content active">
+            <h2>Access Blocked Websites</h2>
+            <div class="proxy-form">
+                <input type="text" id="proxyInput" placeholder="Enter website URL (e.g., youtube.com)" class="proxy-input">
+                <button onclick="goProxy()" class="btn-primary">Go</button>
+            </div>
+            <div class="info-box">
+                <h3>ℹ️ How It Works:</h3>
+                <ul>
+                    <li>Enter any blocked website URL</li>
+                    <li>Click "Go" to access it through Gproxy</li>
+                    <li>Browse securely and privately</li>
+                    <li>Encrypted connection protects your privacy</li>
+                </ul>
+            </div>
+            <div id="proxy-frame-container" style="display: none; margin-top: 20px;">
+                <iframe id="proxy-frame" style="width: 100%; height: 600px; border: 2px solid #0099ff; border-radius: 8px;"></iframe>
+            </div>
+        </div>
+
+        <!-- Games Tab -->
+        <div id="games-tab" class="tab-content">
+            <h2>Unblocked Games</h2>
+            <div class="games-grid">
+                <div class="game-card">
+                    <div class="game-icon">🐍</div>
+                    <h3>Snake</h3>
+                    <p>Classic snake gameplay</p>
+                    <button onclick="loadGame('snake')" class="btn-play">Play Now</button>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-icon">⭕</div>
+                    <h3>Tic Tac Toe</h3>
+                    <p>Play against the computer</p>
+                    <button onclick="loadGame('tictactoe')" class="btn-play">Play Now</button>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-icon">💣</div>
+                    <h3>Minesweeper</h3>
+                    <p>Find all safe squares</p>
+                    <button onclick="loadGame('minesweeper')" class="btn-play">Play Now</button>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-icon">2️⃣</div>
+                    <h3>2048</h3>
+                    <p>Combine tiles to win</p>
+                    <button onclick="loadGame('2048')" class="btn-play">Play Now</button>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-icon">🎲</div>
+                    <h3>Dice Game</h3>
+                    <p>Roll and try your luck</p>
+                    <button onclick="loadGame('dice')" class="btn-play">Play Now</button>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-icon">📝</div>
+                    <h3>Word Search</h3>
+                    <p>Find hidden words</p>
+                    <button onclick="loadGame('wordsearch')" class="btn-play">Play Now</button>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-icon">🧱</div>
+                    <h3>Brick Breaker</h3>
+                    <p>Break all the bricks</p>
+                    <button onclick="loadGame('brickbreaker')" class="btn-play">Play Now</button>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-icon">🧠</div>
+                    <h3>Memory Game</h3>
+                    <p>Match all emoji pairs</p>
+                    <button onclick="loadGame('memory')" class="btn-play">Play Now</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game Container -->
+        <div id="game-container" style="display: none; margin-top: 30px; background: rgba(10, 26, 46, 0.8); border: 2px solid #0099ff; border-radius: 15px; padding: 30px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <h2 id="game-title" style="color: #0099ff; margin: 0;">🎮 Game</h2>
+                <button onclick="closeGame()" style="background: #ff4444; color: #fff; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer;">Close</button>
+            </div>
+            <div id="game-content"></div>
+        </div>
+
+        <!-- About Tab -->
+        <div id="about-tab" class="tab-content">
+            <h2>About Gproxy</h2>
+            <div class="about-content">
+                <h3>🚀 Features</h3>
+                <ul>
+                    <li>✅ Secure encrypted connections</li>
+                    <li>✅ Fast proxy servers</li>
+                    <li>✅ 8 unblocked games</li>
+                    <li>✅ Mobile & desktop compatible</li>
+                    <li>✅ No installation required</li>
+                    <li>✅ Completely free to use</li>
+                </ul>
+
+                <h3>🎯 Why Gproxy?</h3>
+                <p>Gproxy is your solution for accessing blocked content and enjoying games when they're restricted. We provide a fast, reliable, and secure way to browse without limitations.</p>
+
+                <h3>🎮 Games Available</h3>
+                <p>Play 8 different games including Snake, Tic Tac Toe, Minesweeper, 2048, Dice Game, Word Search, Brick Breaker, and Memory Game - all completely unblocked!</p>
+
+                <h3>⚠️ Disclaimer</h3>
+                <p>Use Gproxy responsibly and in accordance with local laws and regulations. We are not responsible for any misuse or consequences of using this service.</p>
+
+                <h3>📧 Support</h3>
+                <p>For issues or suggestions, please contact us through the repository.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Gproxy | Your Gateway to Unrestricted Access</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
